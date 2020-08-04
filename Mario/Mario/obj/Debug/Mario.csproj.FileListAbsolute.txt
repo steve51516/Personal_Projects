@@ -1,0 +1,7 @@
+E:\steve\Documents\Quantico06\ISTA220\Labs\Mario\Mario\bin\Debug\Mario.exe.config
+E:\steve\Documents\Quantico06\ISTA220\Labs\Mario\Mario\bin\Debug\Mario.exe
+E:\steve\Documents\Quantico06\ISTA220\Labs\Mario\Mario\bin\Debug\Mario.pdb
+E:\steve\Documents\Quantico06\ISTA220\Labs\Mario\Mario\obj\Debug\Mario.csprojAssemblyReference.cache
+E:\steve\Documents\Quantico06\ISTA220\Labs\Mario\Mario\obj\Debug\Mario.csproj.CoreCompileInputs.cache
+E:\steve\Documents\Quantico06\ISTA220\Labs\Mario\Mario\obj\Debug\Mario.exe
+E:\steve\Documents\Quantico06\ISTA220\Labs\Mario\Mario\obj\Debug\Mario.pdb
