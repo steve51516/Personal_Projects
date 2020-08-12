@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -13,10 +9,10 @@ namespace ConsoleApp1
             Random r = new Random();
 
 
-            //bool num = SquareOrNot(r.Next(1000));
-            bool num = SquareOrNot(625);
+            bool num = SquareOrNot(r.Next(1000));
+            //bool num = SquareOrNot(625);
 
-            Console.WriteLine(num);
+            Console.WriteLine($"\n{num}");
 
 
         }
@@ -25,9 +21,8 @@ namespace ConsoleApp1
             if (x < 0)
                 return false;
             double y = Math.Sqrt(x);
-            Console.Write($"{x} % {y}:" );
             double num = x % y;
-            Console.WriteLine($"Remainder is {num}");
+            Console.Write($"{x} % {y} remainder is {num}");
 
             if ((x % y) == 0)
                 return true;
