@@ -22,7 +22,7 @@ namespace IsAnagram
             //TODO create method that will reduce repetition of tested char arrays
 
             Array.Sort(arrA);
-            char[] strWrd1 = word1.ToCharArray();
+            //char[] strWrd1 = word1.ToCharArray();
             char[] elem0 = srtConvArr(arrA[0]);
             char[] elem1 = srtConvArr(arrA[1]);
             char[] elem2 = srtConvArr(arrA[2]);
@@ -31,7 +31,7 @@ namespace IsAnagram
             // Tests char array elem1 against test word
             for (int i = 0; i <= elem1.Length - 1; i++)
             {
-                if (elem1[i] != strWrd1[i])
+                if (elem1[i] != word1[i])
                 {
                     Console.WriteLine($"{arrA[0]} and {word1} are not anagrams.");
                     return false;
