@@ -16,8 +16,6 @@ namespace Mario
             Mario mario = new Mario();
 
             mario.Build(count);
-
-
         }
     }
 
