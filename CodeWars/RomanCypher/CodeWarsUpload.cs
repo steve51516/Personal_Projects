@@ -15,7 +15,7 @@ class Kata
                     else
                         vs[i] += (char)13;
                 }
-                else if ((int)vs[i] >= 97 & (int)vs[i] <= 122)
+                else if (vs[i] >= 97 & vs[i] <= 122)
                 {
                     if (vs[i] >= 110)
                     {
