@@ -1,20 +1,4 @@
-﻿using System;
-using System.Text;
-
-namespace RomanCypher
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string cryptoString = Kata.CryptAlpha("The quick brown fox jumps over the 2 lazy dogs");
-            string decryptString = Kata.CryptAlpha("Gur dhvpx oebja sbk whzcf bire gur 7 ynml qbtf");
-
-            Console.WriteLine(cryptoString);
-            Console.WriteLine(decryptString);
-        }
-    }
-    class Kata
+class Kata
     {
         static public string CryptAlpha(string text)
         {
@@ -42,24 +26,6 @@ namespace RomanCypher
                 }
             }
 
-            StringBuilder builder = new StringBuilder();
-
-            foreach (char value in vs)
-            {
-                builder.Append(value);
-            }
-            string result = builder.ToString();
-            char[] vs1 = CryptNumeric(result);
-            foreach (char value in vs1)
-            {
-                builder.Append(value);
-            }
-            string finalResult = builder.ToString();
-            return finalResult;
-        }
-        static public char[] CryptNumeric(string text)
-        {
-            char[] vs = text.ToCharArray();
             for (int i = 0; i <= vs.Length - 1; i++)
             {
                 if (vs[i] >= 48 && vs[i] <= 57)
@@ -70,7 +36,14 @@ namespace RomanCypher
                         vs[i] += (char)5;
                 }
             }
-            return vs;
+
+            StringBuilder builder = new StringBuilder();
+
+            foreach (char value in vs)
+            {
+                builder.Append(value);
+            }
+            string result = builder.ToString();
+            return result;
         }
     }
-}
