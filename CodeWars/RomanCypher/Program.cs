@@ -24,7 +24,7 @@ namespace RomanCypher
             {
                 if (vs[i] >= 65 && vs[i] <= 90)
                 {
-                    if (vs[i] >= 77)
+                    if (vs[i] >= 78)
                     {
                         vs[i] -= (char)13;
                     }

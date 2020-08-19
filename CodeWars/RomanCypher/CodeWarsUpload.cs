@@ -1,6 +1,6 @@
 class Kata
     {
-        static public string CryptAlpha(string text)
+        static public string ROT135(string text)
         {
             char[] vs = text.ToCharArray();
 
