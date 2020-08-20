@@ -18,7 +18,6 @@ namespace findTheDivisors
             }
             else
                 Console.WriteLine("The supplied number is prime.");
-
         }
     }
     class Kata
