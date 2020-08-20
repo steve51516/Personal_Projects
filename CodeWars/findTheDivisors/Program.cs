@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace findTheDivisors
 {
@@ -7,12 +8,12 @@ namespace findTheDivisors
         static void Main(string[] args)
         {
 
-            var vs = Kata.Divisors(24);
-            if (vs != null)
+            int[] Divisors = Kata.Divisors(24);
+            if (Divisors != null)
             {
-                foreach (var num in vs)
+                foreach (var num in Divisors)
                 {
-                    Console.WriteLine(num);
+                    Console.Write(num + " ");
                 }
             }
             else
@@ -27,51 +28,25 @@ namespace findTheDivisors
             if (n < 1)
                 return null;
 
+            List<int> Divisors = new List<int>();
+
             int j = 0;
             int k = 2;
-            for (int i = 0; i < (n / 2); i++)
-            {
-                if (n % k == 0)
-                    j++;
-                k++;
-            }
-            int[] vs = new int[j];
-            j = 0;
-            k = 2;
             for (int i = 0; i <= (n / 2); i++)
             {
                 if (n % k == 0)
                 {
-                    vs[j] = (n / k);
+                    Divisors.Add(n / k);
                     j++;
                 }
                 k++;
             }
-            Array.Sort(vs);
+            Divisors.Sort();
+            int[] vs = Divisors.ToArray();
             if (j == 0)
                 return null;
             else
                 return vs;
-        }
-        public static bool IsPrime(int n)
-        {
-            if (n <= 1)
-                return false;
-            if (n == 2)
-                return true;
-            if (n % 2 == 0)
-                return false;
-            if (Math.Sqrt(n) == 5)
-                return false;
-
-            int boundary = (int)Math.Floor(Math.Sqrt(n));
-
-            for (int i = 3; i < boundary; i += 2)
-            {
-                if (n % i == 0)
-                    return false;
-            }
-            return true;
         }
     }
 }
