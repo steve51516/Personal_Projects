@@ -8,7 +8,7 @@ namespace findTheDivisors
         static void Main(string[] args)
         {
 
-            int[] Divisors = Kata.Divisors(24);
+            int[] Divisors = Kata.Divisors(16);
             if (Divisors != null)
             {
                 foreach (var num in Divisors)
@@ -29,20 +29,18 @@ namespace findTheDivisors
 
             List<int> Divisors = new List<int>();
 
-            int j = 0;
-            int k = 2;
-            for (int i = 0; i <= (n / 2); i++)
+            for (int i = 2; i <= Math.Sqrt(n); i++)
             {
-                if (n % k == 0)
+                if (n % i == 0)
                 {
-                    Divisors.Add(n / k);
-                    j++;
+                    if (i != Math.Sqrt(n))
+                        Divisors.Add(i);
+                    Divisors.Add(n / i);
                 }
-                k++;
             }
             Divisors.Sort();
             int[] vs = Divisors.ToArray();
-            if (j == 0)
+            if (Divisors is null)
                 return null;
             else
                 return vs;
