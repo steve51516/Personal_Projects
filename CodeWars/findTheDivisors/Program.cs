@@ -40,7 +40,7 @@ namespace findTheDivisors
             }
             Divisors.Sort();
             int[] vs = Divisors.ToArray();
-            if (Divisors is null)
+            if (Divisors.Count == 0)
                 return null;
             else
                 return vs;
