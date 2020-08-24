@@ -27,7 +27,7 @@ namespace SortNumbers
             int temp = 0;
             for (int i = 0; i <= nums.Length - 1; i++)
             {
-                for (int x = 0; x < nums.Length - 1; x++)
+                for (int x = 0; x < nums.Length - i - 1; x++)
                 {
                     if (nums[x] > nums[x + 1])
                     {
