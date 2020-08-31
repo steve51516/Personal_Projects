@@ -10,7 +10,8 @@ namespace Mumbling
     {
         public static void Main(string[] args)
         {
-            //string mumble = Accumul.Accum("ZpglnRxqenU");
+            string mumble = Accumul.Accum("ZpglnRxqenU");
+            Console.WriteLine(mumble);
         }
     }
 }
