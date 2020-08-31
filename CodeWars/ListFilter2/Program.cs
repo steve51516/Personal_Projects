@@ -11,8 +11,8 @@ namespace ListFiltering
         {
             List<object> list = new List<object> { 1, 2, "aasf", "1", "123", 123 };
             //List<object> list = new List<object> { "a", "b", 1 };
-            Filter.GetIntegersFromList(list);
-            foreach (var num in list)
+            var newlist = Filter.GetIntegersFromList(list);
+            foreach (var num in newlist)
             {
                 Console.WriteLine(num);
             }
