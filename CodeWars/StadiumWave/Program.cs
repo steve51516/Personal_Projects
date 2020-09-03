@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Xml.Linq;
 
 namespace StadiumWave
 {
@@ -11,7 +12,7 @@ namespace StadiumWave
         static void Main(string[] args)
         {
             Kata kata = new Kata();
-            List<string> waveList = kata.Wave(" gap ");
+            List<string> waveList = kata.Wave("two words");
 
             foreach (var wave in waveList)
             {
@@ -28,15 +29,15 @@ namespace StadiumWave
                 List<string> emptyList = new List<string>();
                 return emptyList;
             }
-            bool fixEnd = false;
-            int spaceToFix = 0;
+
+            bool fix = false;
+
             if (str[str.Length - 1] == 32)
             {
-                spaceToFix = str.Length;
                 str = str.TrimEnd(' ');
-                spaceToFix -= str.Length;
-                fixEnd = true;
+                fix = true;
             }
+
             List<char> wave = new List<char>();
             char[] strChar = str.ToCharArray();
             double limit = Math.Pow(str.Length, 2);
@@ -48,8 +49,14 @@ namespace StadiumWave
                         i++;
 
                     strChar[i] = char.ToUpper(strChar[i]);
-                        wave.AddRange(strChar);
-                    wave.Add(',');
+                    wave.AddRange(strChar);
+                    if (fix == true)
+                    {
+                        wave.Add(' ');
+                        wave.Add(',');
+                    }
+                    else
+                        wave.Add(',');
                     strChar[i] = char.ToLower(strChar[i]);
                     if (i < strChar.Length - 1)
                         i++;
@@ -57,22 +64,17 @@ namespace StadiumWave
                         j = (int)limit;
                 }
             }
+
             if (wave[wave.Count - 1] == ',')
                 wave.RemoveAt(wave.Count - 1);
-            if (fixEnd == true)
-                do
-                {
-                    if (wave.IndexOf(',') + 1 != ' ')
-                        wave.Insert(wave.IndexOf(',') + 1,' ');
-                    spaceToFix--;
-                } while (spaceToFix > 0);
+
             string tempStr = null;
+
             for (int i = 0; i < wave.Count; i++)
-            {
                 tempStr += wave[i];
-            }
-            var vs = tempStr.Split(',');
-            List<string> strList = vs.ToList();
+
+            var finalTemp = tempStr.Split(',');
+            List<string> strList = finalTemp.ToList();
             return strList;
         }
     }
