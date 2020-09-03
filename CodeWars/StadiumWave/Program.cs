@@ -12,11 +12,11 @@ namespace StadiumWave
         static void Main(string[] args)
         {
             Kata kata = new Kata();
-            List<string> waveList = kata.Wave("two words");
+            List<string> waveList = kata.Wave("   R btpyuntt svxp  ");
 
             foreach (var wave in waveList)
             {
-                Console.WriteLine(wave);
+                Console.WriteLine($"'{wave}'");
             }
         }
     }
@@ -31,13 +31,16 @@ namespace StadiumWave
             }
 
             bool fix = false;
-
+            int numOfSpaces = 0;
+            int originalLength = 0;
             if (str[str.Length - 1] == 32)
             {
+                originalLength = str.Length;
                 str = str.TrimEnd(' ');
                 fix = true;
+                numOfSpaces = originalLength - str.Length;
             }
-
+            int countSpaces = numOfSpaces;
             List<char> wave = new List<char>();
             char[] strChar = str.ToCharArray();
             double limit = Math.Pow(str.Length, 2);
@@ -52,7 +55,13 @@ namespace StadiumWave
                     wave.AddRange(strChar);
                     if (fix == true)
                     {
-                        wave.Add(' ');
+                        countSpaces = numOfSpaces;
+                        do
+                        {
+                            wave.Add(' ');
+                            countSpaces--;
+                        } while (countSpaces > 0);
+                        
                         wave.Add(',');
                     }
                     else
