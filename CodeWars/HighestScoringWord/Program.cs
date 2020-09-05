@@ -26,12 +26,8 @@ namespace HighestScoringWord
         {
             char[] charArr = s.ToCharArray();
             int[] intValues = new int[s.Split(' ').Length];
-            //int[] alphabetValues = new int[26];
-            //for (int i = 0, j = 1; i < alphabetValues.Length; i++, j++)
-            //{
-            //    alphabetValues[i] = j;
-            //}
             List<char> alphabetChars = "aabcdefghijklmnopqrstuvwxyz".ToList<char>();
+
             for (int i = 0, j = 0; i <= intValues.Length - 1; i++)
             {
                 while (charArr[j] != ' ')
@@ -45,6 +41,7 @@ namespace HighestScoringWord
                 if (charArr[j] == ' ' && j <= charArr.Length - 1)
                     j++;
             }
+
             string[] strArr = s.Split(' ');
             int maxValue = intValues.Max();
             int maxIndex = intValues.ToList().IndexOf(maxValue);
