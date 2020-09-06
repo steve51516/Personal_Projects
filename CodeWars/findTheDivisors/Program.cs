@@ -8,7 +8,7 @@ namespace findTheDivisors
         static void Main(string[] args)
         {
 
-            int[] Divisors = Kata.Divisors(16);
+            int[] Divisors = Kata.Divisors(10);
             if (Divisors != null)
             {
                 foreach (var num in Divisors)
